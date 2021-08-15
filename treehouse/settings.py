@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z+@xb=gw#iq8mzobk1*-n=reqj@^(=58x5t*i1rmag_v^)*pi+'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['treehouse-shop.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -129,6 +129,18 @@ WSGI_APPLICATION = 'treehouse.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 DATABASES = {
     'default': dj_database_url.parse('postgres://qulwibzsxfzvax:14ac0c86ebef7b6bd0ce8f305f73e2f967c809c158f4f6f160f7c71eb39039ff@ec2-54-74-77-126.eu-west-1.compute.amazonaws.com:5432/dbvg072mbjaq5s')
