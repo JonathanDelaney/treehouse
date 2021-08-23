@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="container cart-container">
+      <div class="row">
+        <div class="col cart-heading text-center">
+            <h1>Favourites</h1>
+        </div>
+    </div>
+    {% for product in favourites_products %}
+    {{product.product.name}}
+    {% endfor %}
+</div>
+{% endblock %}
