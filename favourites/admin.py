@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import UsersFavourites
 
-# Register your models here.
+
+class UsersFavouritesAdmin(admin.ModelAdmin):
+    model = UsersFavourites
+    list_display = (
+        "user",
+    )
+
+
+admin.site.register(UsersFavourites, UsersFavouritesAdmin)

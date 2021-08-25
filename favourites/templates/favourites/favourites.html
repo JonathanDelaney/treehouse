@@ -2,17 +2,26 @@
 {% load static %}
 
 {% block header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
-<div class="container cart-container">
-      <div class="row">
-        <div class="col cart-heading text-center">
-            <h1>Favourites</h1>
+<div class="container mt-5">
+    <div class="container mt-5 mb-5">
+        <div class="row mt-5">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Favourites</h2>
+                <hr>
+            </div>
         </div>
-    </div>
-    {% for product in favourites_products %}
-    {{product.product.name}}
+    {% for product in favourite_products %}
+    <p>{{product.product.name}}</p>
     {% endfor %}
+    </div>
 </div>
 {% endblock %}

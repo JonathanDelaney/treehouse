@@ -1,23 +1,27 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-from products.models import Product
 from django.core.paginator import Paginator
+from django.shortcuts import (render, get_object_or_404,
+                              redirect, reverse, HttpResponse)
+from django.contrib import messages
+
+from .models import UsersFavourites
+from products.models import Product
 
 
 def view_favourites(request):
     ''' a view to show the users favourites '''
 
-    favourites_products = []
+    favourite_products = []
     favourites = request.session.get("favourites", {})
 
     for product_id in favourites:
         product = get_object_or_404(Product, pk=product_id)
-        favourites_products.append({"product": product})
+        favourite_products.append({"product": product})
 
     template = "favourites/favourites.html"
-    print(favourites_products)
+    print(favourite_products)
     context = {
         "favourites": True,
-        "favourites_products": favourites_products,
+        "favourite_products": favourite_products,
     }
 
     return render(request,
