@@ -8,15 +8,16 @@ from django.dispatch import receiver
 
 class UsersFavourites(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, blank=True)
+    products = models.ManyToManyField(Product, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
 
 
 @receiver(post_save, sender=User)
-def create_or_update_the_UserFavourites(sender, instance, created, **kwargs):
+def create_or_update_the_UsersFavourites(sender, instance, created, **kwargs):
     ''' creates the user profile or updates it if there is one already '''
     if created:
         UsersFavourites.objects.create(user=instance)
+        # UsersFavourites.products = None
     instance.userprofile.save()
