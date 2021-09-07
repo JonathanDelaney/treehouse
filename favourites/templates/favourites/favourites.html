@@ -19,8 +19,18 @@
                 <hr>
             </div>
         </div>
+        <form action="{% url 'empty_favourites' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            <button type="submit">Empty Favourites</button>
+        </form>
     {% for product in favourite_products %}
     <p>{{product}}</p>
+    <form action="{% url 'remove_from_favourites' product.id %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        <button type="submit">Remove From Favourites</button>
+    </form>
     {% endfor %}
     </div>
 </div>

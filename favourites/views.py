@@ -18,11 +18,8 @@ def view_favourites(request):
 
     for product in favourites.products.all():
         favourite_products.append(product)
-        print(product)
 
     template = "favourites/favourites.html"
-
-    print(favourite_products)
 
     context = {
         "favourites": True,
@@ -36,14 +33,11 @@ def view_favourites(request):
 
 def add_to_favourites(request, product_id):
 
-    favourites = request.session.get("favourites", {})
     redirect_url = request.POST.get("redirect_url")
-
-    favourites[product_id] = product_id
-    request.session["favourites"] = favourites
 
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
+        print(f"adding product {product}")
         favourites = get_object_or_404(UsersFavourites, user=request.user)
         if product not in favourites.products.all():
             favourites.products.add(product)
@@ -53,4 +47,47 @@ def add_to_favourites(request, product_id):
     else:
         messages.error(request,
                        "You do not have permission to do this.")
-        return HttpResponseRedirect(request.path_info)
+        return redirect(redirect_url)
+
+
+def remove_from_favourites(request, product_id):
+    ''' View to remove products from the favourites '''
+
+    redirect_url = request.POST.get("redirect_url")
+
+    if request.method == "POST":
+        try:
+            print("trying to remove")
+            product = get_object_or_404(Product, pk=product_id)
+            print(f"gotten product {product}")
+            favourites = get_object_or_404(UsersFavourites, user=request.user)
+            print("gotten favourites")
+            print(product)
+            print(favourites)
+            if product in favourites.products.all():
+                favourites.products.remove(product)
+            messages.success(request,
+                                f"{product.name} has been removed \
+    from your favourites.")
+            return redirect(redirect_url)
+        except Exception as error:
+            messages.error(request, f"Error removing product {error}")
+            return HttpResponse(status=500)
+    else:
+        messages.error(request, "Error you do not have \
+permission to do this.")
+        return redirect(redirect_url)
+
+
+def empty_favourites(request):
+    ''' A view to empty the favourites '''
+
+    if request.method == "POST":
+        favourites = get_object_or_404(UsersFavourites, user=request.user)
+        favourites.products.clear()
+        messages.success(request, "Your favourites list has been emptied.")
+        return redirect(reverse("view_favourites"))
+    else:
+        messages.error(request, "Error you do not have \
+permission to do this.")
+        return redirect(reverse("home_page"))
