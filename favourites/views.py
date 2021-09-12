@@ -42,7 +42,8 @@ def add_to_favourites(request, product_id):
         if product not in favourites.products.all():
             favourites.products.add(product)
             messages.success(request,
-                             f"{product.name} has been added to your favourites.")
+                             f"{product.name} has been added to your \
+                                 favourites.")
             return redirect(redirect_url)
     else:
         messages.error(request,
@@ -57,11 +58,8 @@ def remove_from_favourites(request, product_id):
 
     if request.method == "POST":
         try:
-            print("trying to remove")
             product = get_object_or_404(Product, pk=product_id)
-            print(f"gotten product {product}")
             favourites = get_object_or_404(UsersFavourites, user=request.user)
-            print("gotten favourites")
             print(product)
             print(favourites)
             if product in favourites.products.all():
@@ -82,12 +80,14 @@ permission to do this.")
 def empty_favourites(request):
     ''' A view to empty the favourites '''
 
+    redirect_url = request.POST.get("redirect_url")
+
     if request.method == "POST":
         favourites = get_object_or_404(UsersFavourites, user=request.user)
         favourites.products.clear()
         messages.success(request, "Your favourites list has been emptied.")
-        return redirect(reverse("view_favourites"))
+        return redirect(redirect_url)
     else:
         messages.error(request, "Error you do not have \
 permission to do this.")
-        return redirect(reverse("home_page"))
+        return redirect(redirect_url)

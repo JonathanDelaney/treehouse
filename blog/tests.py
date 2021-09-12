@@ -44,7 +44,6 @@ class TestBlogPostViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "blog/view_blog.html")
         self.assertTemplateUsed(response, "base.html")
-        self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_view_post_GET(self):
         ''' test the view post view with a GET request '''
@@ -53,7 +52,6 @@ class TestBlogPostViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "blog/post.html")
         self.assertTemplateUsed(response, "base.html")
-        self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_view_post_POST_form_valid(self):
         ''' test the view post view with a POST request
