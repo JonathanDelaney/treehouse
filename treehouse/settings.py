@@ -131,7 +131,7 @@ WSGI_APPLICATION = 'treehouse.wsgi.application'
 #     }
 # }
 
-if 'DATABASE_URL' not in os.environ:
+if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -143,9 +143,7 @@ else:
         }
     }
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://qulwibzsxfzvax:14ac0c86ebef7b6bd0ce8f305f73e2f967c809c158f4f6f160f7c71eb39039ff@ec2-54-74-77-126.eu-west-1.compute.amazonaws.com:5432/dbvg072mbjaq5s')
-# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
