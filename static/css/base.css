@@ -73,6 +73,10 @@ body {
     background: #000 !important;
 }
 
+.head-buffer {
+    margin-top: calc(8vw + 8vh);
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;
