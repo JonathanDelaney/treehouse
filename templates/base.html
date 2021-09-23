@@ -157,16 +157,21 @@
         var lastScrollTop = 0;
         $(window).scroll(function(event){
             var st = $(this).scrollTop();
-            if (st > lastScrollTop){
-                $("#main-nav").removeClass("collapse navbar-collapse");
-                $("#main-nav").hide("fast", "swing")
-                $("#delivery-banner").hide("fast", "swing")
-            } else {
-                $("#main-nav").addClass("collapse navbar-collapse");
-                $("#main-nav").show("fast", "swing")
-                $("#delivery-banner").show("fast", "swing")
+            if ($(window).width() >= 992) {
+                if (st > lastScrollTop){
+                    $("#main-nav").removeClass("collapse navbar-collapse");
+                    $("#main-nav").hide("fast", "swing")
+                    $("#delivery-banner").hide("fast", "swing")
+                } else {
+                    $("#main-nav").addClass("collapse navbar-collapse");
+                    $("#main-nav").show("fast", "swing")
+                    $("#delivery-banner").show("fast", "swing")
+                }
+                lastScrollTop = st;
             }
-            lastScrollTop = st;
+            else {
+                lastScrollTop = st;
+            }
         });
     </script>
     {% endblock %}
