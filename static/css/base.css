@@ -86,7 +86,10 @@ color: black !important;
 }
 
 .add-to {
-    background-color: rgb(100, 82, 59);
+    background-color: rgba(100, 82, 59, 0.8);
+    width: fit-content;
+    height: min-content;
+    border-radius: 3px !important;
 }
 
 .btn-outline-black:hover,

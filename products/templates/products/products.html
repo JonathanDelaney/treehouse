@@ -64,11 +64,13 @@
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
                                 </div>
+                                {% if request.user.is_authenticated %}
                                 <form action="{% url 'add_to_favourites' product.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     <button class="add-to btn btn-lg rounded-0 text-uppercase" type="submit">Add To Favourites</button>
                                 </form>
+                                {% endif %}
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
