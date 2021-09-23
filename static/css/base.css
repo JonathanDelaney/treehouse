@@ -28,9 +28,10 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: rgb(29, 83, 12);
     color: white;
     min-width: 260px;
+    border-radius: 3px !important;
 }
 
 .btn-black {
