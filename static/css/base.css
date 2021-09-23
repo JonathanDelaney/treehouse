@@ -25,10 +25,20 @@ body {
 
 .main-logo-link {
     width: fit-content;
+    margin-left: calc(6vw + 10px);
+}
+
+.navbar {
+    padding: 0px !important;
+    background-color: rgba(97, 132, 77, 0.5) !important;
+}
+
+.dropdown-menu {
+    background-color: rgba(97, 132, 77, 1) !important;
 }
 
 .shop-now-button {
-    background: rgb(29, 83, 12);
+    background: rgba(97, 132, 77, 1);
     color: white;
     min-width: 260px;
     border-radius: 3px !important;
