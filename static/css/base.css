@@ -390,12 +390,23 @@ input[name='q']::placeholder {
     padding: 0 2rem;
 }
 
-.items-row{
-    min-height: 45vh;
-}
-
 .item-col {
     margin: 4rem 0;
+}
+
+.item-link-button {
+    margin: 1.25rem 0;
+    width: 15rem;
+}
+
+.item-link-light {
+    color: #153243;
+    border: .1rem solid #153243;
+}
+
+.item-link-light:hover {
+    background-color: #153243;
+    color: #EDEDE9;
 }
 
 /* Blog */
@@ -422,7 +433,7 @@ input[name='q']::placeholder {
     height: fit-content;
     position: absolute;
     bottom: -7.5rem;
-    left: -1rem;
+    left: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
