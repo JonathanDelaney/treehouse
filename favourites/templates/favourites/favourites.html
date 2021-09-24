@@ -55,7 +55,7 @@
                                 <form action="{% url 'remove_from_favourites' product.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    <button class="btn btn-lg rounded-0 text-uppercase" type="submit">Remove From Favourites</button>
+                                    <button class="favourite-button" type="submit" data-toggle="tooltip" data-placement="top" title="Add To Favourites"><i class="fas fa-minus-circle flex-center" aria-hidden="true"></i></button>
                                 </form>
                             </div>
                         </div>

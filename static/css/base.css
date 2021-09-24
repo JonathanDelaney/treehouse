@@ -229,9 +229,26 @@ input[name='q']::placeholder {
 .card-img-top {
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
-    max-height: 300px;
+    max-height: 240px;
     object-fit: scale-down;
 
+}
+
+.favourite-button {
+    display: block;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+}
+
+.favourite-button i {
+    font-size: 2rem;
 }
 
 /* -------------------------------- Media Queries */

@@ -45,6 +45,8 @@ def add_to_favourites(request, product_id):
                              f"{product.name} has been added to your \
                                  favourites.")
             return redirect(redirect_url)
+        else:
+            return redirect(redirect_url)
     else:
         messages.error(request,
                        "You do not have permission to do this.")
