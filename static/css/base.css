@@ -226,6 +226,14 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+.card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    max-height: 300px;
+    object-fit: scale-down;
+
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
