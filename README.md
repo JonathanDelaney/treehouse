@@ -1,102 +1,145 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">treeHouse</h1>
 
-Welcome JonathanDelaney,
+Live website :arrow_down:<br>
+<a href="https://treehouse-shop.herokuapp.com/">View live project here.</a>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## About
 
-## Gitpod Reminders
+This is an e-commerce website for a fictional eco-homeware business. The goal of the website is to allow customers to browse products, create an account, purchase products and store information about themselves, their purchase history and items they want to add to a wishlist. Also the site administrator can exercise CRUD functionality on products, and blogs for customers to read and comment on. It features STRIPE's payments processer and will allow a user to make a purchase using the following card details; card num: 4242 4242 4242 4242, any date and any cvv. Submition of those details will complete the order, please don't use your own card details.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Screenshots
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## User Experience
 
-Another blue button should appear to click: _Open Browser_.
+### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- Customers
+  - Website experience
+    - As a customer, I would like to see what the website is selling.
+    - I would like to be able to navigate the website easily.
+    - I would like to see some information about the company.
+    - As a customer, I would like to be able to contact the company.
+  
+  - Product.
+    - As a customer, I would like to see all the products the company sells.
+    - I would like to be able to search by category.
+    - I would like to be able to search through the products.
+    - I would like to sort the items by price.
 
-A blue button should appear to click: _Make Public_,
+  - Shopping.
+    - As a customer, I would like to see the product price and description.
+    - I would like to be able to add products to my shopping cart.
+    - I would like to be notified when I complete interactions with the site.
+    - I would like to be able to edit my shopping cart.
+    - I would like to be able to checkout easily.
+    - I would like to receive confirmation of my order.
 
-Another blue button should appear to click: _Open Browser_.
+  - Account.
+    - As a customer, I would like to save my details to an account.
+    - I would like to see my previous order details.
+    - I would like to leave a review of the company.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Website administrator.
+  - As a site administrator, I would like to be able to edit and add products easily.
+  - I would like to be able to delete products.
+  - I would like to have access to an admin section. 
+  - I would like my customers to be able to shop on the site easily.
 
-To log into the Heroku toolbelt CLI:
+## Mockups
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Mobile
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Tablet
 
-------
+### Desktop
 
-## Release History
+## Database Models
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- #### Models
+- Profiles
+  - User
+    - From Django Allauth; contains their username, email, and password.
+  - Userprofile
+    - Model containing the user's address, phone number and username.
+ 
+- Favourites
+  - Users' Favourites
+    - Contains products that the user has added to their favourites list.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Products 
+  - Products
+    - Contains all the information for each product.
+  - Categories
+    - The categories all the products fall in to.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- Checkout
+  - Order
+    - Contains the details of orders a customer has made and the products they've purchased.
+  - Orderline item
+    - Products of the customer order, quantities and the total price.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Blog
+  - Post
+    - Contains blog posts, their title and author.
+  - Comments
+    - Contains the comments entered under each post.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Database Diagram
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  - This databse diagram shows each object, its keys and relationships between them.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Design
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- The design of the website was inspired by a treehouse with a colour scheme dominated by greens, browns and beige. This lends itself to an eco aesthetic which matches the theme of the website, sustainable homeware.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- All the different shades of green and the gradient of the beige background with spots of brown should be perfect in representing the treehouse experience in simple colour.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- The fonts chosen from google fonts for the header "treeHouse" are -blank- and Bonheur Royale. These are characteristic of the strong tree trunk and the elegant branches of leaves. This combination also could evoke the image of a treehouse.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- I used icons from font-awesome for relevant inputs, navigation and dropdown menu. For the "add to favourites" button I used a heart symbol, the obvious choice and emblematic of a like button.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Features
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Landing Page
 
-------
+- This is a static page which features everything the user needs to navigate the site and understand it's purpose. The message "HELP US CLEAN UP THE PLANET WHILE KEEPING YOU AND YOUR HOME CLEAN" lets the user know the mission of the site. It also points directly to the kind of products for sale without requiring the user to read a paragraph or two about the aim of the e-commerce shop.
+- The large "Shop Now" button immediately below the message is ideally placed below the question to suggest to the user the best way they can help us clean up the planet.
+- The Blog button gives them an option to become more informed about the mission of the site and the stories of people leading eco-lives.
+- The message below the header tells the user that they can get free delivery with a purchase over €40. A welcome message which doesn't obtrude on the page greatly.
+- The header contains a search bar, the title and a couple of icons for navigation. One of the icons is a person indicating personal/user info, it triggers a dropdown menu with links relating to the user's profile. The other icon is a link to the shopping cart and also displays a running total of it's contents beneath it.
+- There is a bottom section to the header which displays dropdown links for the range of products and one for the csategories for the user to easily navigate to their preferred products from the homepage.
 
-## FAQ about the uptime script
+### Products Page
 
-**Why have you added this script?**
+- The products page extends the base template and features a "sort by" selecter and gives the user the number of products displayed by the given search or category.
+- Products can be sorted by price, category, or alphabetically.
+- If a category has been selected the category is diplayed below the "Products" heading.
+- The products are displayed in rows of 4, 3, 2, or 1 depending on the width of the page, from large to small.
+- The images are capped at a max height so that they don't stand out too much in their row given the different image shapes that could be uploaded.
+- Beneath the image is the name of the product, the price and the category that it's in.
+- If the user clicks on the category below they will be presented with all products of that category.
+- There is a heart icon to the bottom left of the product that the user can click to add the product to their favourites list.
+- As the user scrolls down the page through the products the bottom part of the header and the free delivery announcment slide out of view to give them a better view of the products.
+- The header is also transparent so it doesn't impare the view more than it needs to while remaining clear if the user does wish to use it.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### Product Detail Page
 
-**How will this affect me?**
+  - This page displays a larger image of the product with some information about it and a review in stars out of 5.
+  - The product can be added to the users shopping basket from here with an "add to cart" button.
+  - There is quantity selector so the user can choose how many of the product they wish to add.
+  - The heart icon is also on this page so it can be added to favourites from here also.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Shopping Bag Page
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- When the user has finished shopping they can click the icon in the top left corner and be brought to the bag page.
+- This page allows the user to look at the products they have in their cart and edit them.
+- There is a quantity selector next to the products for the user to add to or reduce the number of an item. They would then click the update button below to register the change.
+- A remove button allows them to remove a product immediately if they wish.
+- The price for each item is displayed to the side and a total is displayed at the bottom with a message letting them know how far from a free delivery they are if the total is less than €40.
+- The checkout now button is just below, directing straight to a payments page.
+- When a product has been added to the cart it will trigger a dropdown displaying the contents of the bag, the toal price and a link to go directly to checkout.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### The Checkout Page
 
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- If not logged in, the user will be required to give their 

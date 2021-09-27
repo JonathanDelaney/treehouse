@@ -133,11 +133,16 @@
                             {% endwith %}
                         </div>
                     </form>
+                    {% if request.user.is_authenticated %}
+                    {% if product.id|ifinlist:favourites_products == True %}
+                    {% else %}
                     <form action="{% url 'add_to_favourites' product.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         <button class="favourite-button" type="submit" data-toggle="tooltip" data-placement="top" title="Add To Favourites"><i class="fab fa-gratipay flex-center" aria-hidden="true"></i></button>
                     </form>
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
