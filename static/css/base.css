@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&display=swap');
+
 html {
     height: 100%;
 }
@@ -8,6 +10,20 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+}
+
+.heading-font {
+    font-family: 'Caramel', cursive;
+    font-weight: 900;
+    font-size: 3.3rem;
+}
+
+.grad-back {
+    background: linear-gradient(135deg, rgba(255,254,246,1) 0%, rgba(255,238,202,1) 100%);
+}
+
+.container-fluid {
+    padding-bottom: 2rem !important;
 }
 
 /* from Bulma */
@@ -67,8 +83,31 @@ color: black !important;
     background-color: rgba(97, 132, 77, 1) !important;
 }
 
+.free-delivery {
+    background: #fdf7ea;
+}
+
 .shop-now-button {
-    background: rgba(97, 132, 77, 1);
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%);
+    color: white;
+    min-width: 260px;
+    border-radius: 3px !important;
+}
+
+.shop-now-button:hover {
+    color: #000 !important;
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%) !important;
+}
+
+.empty-button {
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%) !important;
+    margin-bottom: 2rem;
+    border-radius: 3px !important;
+    color: #fff5f4;
+}
+
+.blog-button {
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 32%, rgba(154,112,24,1) 100%);
     color: white;
     min-width: 260px;
     border-radius: 3px !important;
@@ -231,13 +270,21 @@ input[name='q']::placeholder {
     border-top-right-radius: calc(.25rem - 1px);
     max-height: 240px;
     object-fit: scale-down;
+    background: #ffe9d7;
+}
 
+.card-body {
+    background: #ffe9d7;
+}
+
+.card-footer {
+    background: #ffe9d7;
 }
 
 .favourite-button {
     display: block;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     right: 2rem;
     height: 3rem;
     width: 3rem;
@@ -525,14 +572,14 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 140px;
     }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 79px;
     }
 
     body {
