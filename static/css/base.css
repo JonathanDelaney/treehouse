@@ -656,11 +656,7 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
-
-    /* .blog-img-top {
-        max-width: 80vw;
-    } */
-
+    
     .navbar {
         background-color: rgba(97, 132, 77, 1) !important;
     }
