@@ -33,7 +33,7 @@ class TestProductsViews(TestCase):
         )
         self.products = reverse("products")
         self.product_detail = reverse("product_detail",
-                                   kwargs={"product_id": self.product.id})
+                                   args=[self.product.id])
 
     def test_all_products_view(self):
         ''' Test the all products view '''
@@ -50,7 +50,6 @@ class TestProductsViews(TestCase):
                                    {"query": "test"})
         context = response.context
         self.assertTrue('query')
-        # self.assertEqual('query', 'test')
 
     def test_all_products_views_with_categories(self):
         ''' Test the all products view with a category parameter '''
@@ -60,7 +59,6 @@ class TestProductsViews(TestCase):
         category = Category.objects.get(name="test_categories")
         context = response.context
         self.assertTrue(context['current_categories'])
-        # self.assertQuerysetEqual(context['current_categories'], category)
 
     def test_all_products_views_with_sort(self):
         '''  Test the all products view with a sort paramater '''

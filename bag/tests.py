@@ -121,7 +121,7 @@ class TestBagViews(TestCase):
         response = self.client.post(self.remove_from_bag)
         messages = list(get_messages(response.wsgi_request))
 
-        # second message as adding to th bag also adds a message
+        # second message as adding to the bag also adds a message
         self.assertEqual(len(messages), 2)
         self.assertEqual(str(messages[1]),
                          "Removed test product from your bag")

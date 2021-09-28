@@ -17,8 +17,7 @@ class TestCheckoutViews(TestCase):
             password='testPassword'
         )
         self.product = Product.objects.create(name="test product", price="1")
-        # self.add_to_bag = reverse("add_to_bag",
-        #                            kwargs={"product_id": self.product.id})
+        self.add_to_bag = reverse("add_to_bag", args=[self.product.id])
 
     def test_checkout_view_with_empty_cart(self):
         ''' Test the checkout view with an empty cart. '''
@@ -33,18 +32,18 @@ class TestCheckoutViews(TestCase):
     def test_checkout_view_with_cart(self):
         ''' Test the checkout view with a =n product in the cart '''
 
-        # self.client.post(self.add_to_bag,
-        #                  data={"quantity": "1",
-        #                        "redirect_url": "/"})
+        self.client.post(self.add_to_bag,
+                         data={"quantity": "1",
+                               "redirect_url": "/"})
         response = self.client.get(self.checkout)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
     def test_checkout_success(self):
         ''' Test the checkout success view. '''
 
-        # self.client.post(self.add_to_bag,
-        #                  data={"quantity": "1",
-        #                        "redirect_url": "/"})
+        self.client.post(self.add_to_bag,
+                         data={"quantity": "1",
+                               "redirect_url": "/"})
         response = self.client.post(self.checkout,
                                     data={
                                         'full_name': 'testuser',
@@ -65,11 +64,9 @@ class TestCheckoutViews(TestCase):
         ''' Test the checkout view form is prefilled
             With the user data'''
 
-        # self.client.post(self.add_to_bag,
-        #                  data={"quantity": "1",
-        #                        "redirect_url": "/"})
+        self.client.post(self.add_to_bag,
+                         data={"quantity": "1",
+                               "redirect_url": "/"})
         self.client.login(username="testuser", password="testPassword")
         response = self.client.get(self.checkout)
-        self.assertEqual(response.status_code, 302)
-        # self.assertEqual(response.context['form'].initial['email'],
-        #                  self.user.email)
+        self.assertEqual(response.status_code, 200)

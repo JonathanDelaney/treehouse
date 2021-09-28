@@ -37,7 +37,6 @@ def add_to_favourites(request, product_id):
 
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
-        print(f"adding product {product}")
         favourites = get_object_or_404(UsersFavourites, user=request.user)
         if product not in favourites.products.all():
             favourites.products.add(product)
@@ -62,8 +61,6 @@ def remove_from_favourites(request, product_id):
         try:
             product = get_object_or_404(Product, pk=product_id)
             favourites = get_object_or_404(UsersFavourites, user=request.user)
-            print(product)
-            print(favourites)
             if product in favourites.products.all():
                 favourites.products.remove(product)
             messages.success(request,

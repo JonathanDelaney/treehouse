@@ -37,11 +37,6 @@ class TestFavouritesModels(TestCase):
 
         self.client.login(username="testuser", password="testpassword")
         response = self.client.get(self.add_to_favourites)
-        # messages = list(response.context.get('messages'))
-        # self.assertEqual(len(messages), 1)
-        # self.assertEqual(str(messages[0]),
-                        #  "You do not have permission to do this.")
-        # self.assertRedirects(response, self.products)
         self.assertEqual(response.status_code, 301)
 
     def test_add_to_favourites_POST(self):
@@ -51,24 +46,14 @@ class TestFavouritesModels(TestCase):
         response = self.client.post(self.add_to_favourites)
         favourites = UsersFavourites.objects.get(user=self.user)
         products = favourites.products.all()
-        # self.assertTrue(products[0], self.product)
-        # messages = list(get_messages(response.wsgi_request))
-        # self.assertEqual(len(messages), 1)
-        # self.assertEqual(str(messages[0]),
-        #                  f"{self.product.name} has been added to your favourites.")
+        self.assertEqual(response.status_code, 301)
 
     def test_remove_from_favourites_GET(self):
         ''' Test the remove from favourites view GET request '''
 
         self.client.login(username="testuser", password="testpassword")
         response = self.client.get(self.remove_from_favourites)
-        # self.assertRedirects(response, self.home)
         self.assertEqual(response.status_code, 301)
-#         messages = list(get_messages(response.wsgi_request))
-#         self.assertEqual(len(messages), 1)
-#         self.assertEqual(str(messages[0]),
-#                          "Error you do not have \
-# permission to do this.")
 
     def test_remove_from_favourites_POST(self):
         ''' Test the remove from favourites view POST request '''
@@ -79,35 +64,20 @@ class TestFavouritesModels(TestCase):
         favourites = UsersFavourites.objects.get(user=self.user)
         products = favourites.products.all()
         self.assertFalse(products)
-#         messages = list(get_messages(response.wsgi_request))
-#         self.assertEqual(len(messages), 2)
-#         self.assertEqual(str(messages[1]),
-#                          f"{self.product.name} has been removed \
-#  from your favourites.")
 
     def test_empty_favourites_GET(self):
         ''' Test the delete favourites view GET request '''
 
         self.client.login(username="testuser", password="testpassword")
         response = self.client.get(self.empty_favourites)
-        # self.assertRedirects(response, self.home)
         self.assertEqual(response.status_code, 200)
-#         messages = list(get_messages(response.wsgi_request))
-#         self.assertEqual(len(messages), 1)
-#         self.assertEqual(str(messages[0]),
-#                          "Error you do not have \
-# permission to do this.")
 
     def test_empty_favourites_POST(self):
         ''' Test the delete favourites view POST request '''
 
         self.client.login(username="testuser", password="testpassword")
         self.client.post(self.add_to_favourites)
-        # response = self.client.post(self.empty_favourites)
+        response = self.client.post(self.empty_favourites)
         favourites = UsersFavourites.objects.get(user=self.user)
         products = favourites.products.all()
         self.assertFalse(products)
-#         messages = list(get_messages(response.wsgi_request))
-#         self.assertEqual(len(messages), 2)
-#         self.assertEqual(str(messages[1]),
-#                          "Your favourites has been deleted.")
