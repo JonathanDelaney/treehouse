@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
 }
 
 .container-fluid {
@@ -71,7 +71,7 @@ color: black !important;
 
 .main-logo-link {
     width: fit-content;
-    margin-left: calc(6vw + 10px);
+    margin-left: calc(9vw - 16px);
 }
 
 .navbar {
@@ -88,7 +88,7 @@ color: black !important;
 }
 
 .shop-now-button {
-    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%);
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 72%, rgba(154,112,24,1) 100%);
     color: white;
     min-width: 260px;
     border-radius: 3px !important;
@@ -96,7 +96,7 @@ color: black !important;
 
 .shop-now-button:hover {
     color: #000 !important;
-    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%) !important;
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 72%, rgba(154,112,24,1) 100%) !important;
 }
 
 .empty-button {
@@ -106,8 +106,12 @@ color: black !important;
     color: #fff5f4;
 }
 
+.delete-button {
+    border: none !important;
+}
+
 .blog-button {
-    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 32%, rgba(154,112,24,1) 100%);
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 32%, rgba(154,112,24,1) 100%);
     color: white;
     min-width: 260px;
     border-radius: 3px !important;
@@ -656,7 +660,7 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
-    
+
     .navbar {
         background-color: rgba(97, 132, 77, 1) !important;
     }
