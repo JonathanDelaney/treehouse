@@ -20,19 +20,19 @@ body {
 
 .grad-back {
     background: linear-gradient(135deg, rgba(255,254,246,1) 0%, rgba(255,238,202,1) 100%);
+    min-width: 100vw;
+}
+
+.container {
+    padding-bottom: 5rem;
 }
 
 .container-fluid {
-    padding-bottom: 2rem !important;
+    padding-bottom: 5rem !important;
 }
 
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+.home-container {
+    padding-top: 1rem;
 }
 
 .form-control {
@@ -113,6 +113,15 @@ color: black !important;
     border-radius: 3px !important;
 }
 
+.card {
+    border-radius: 3px !important;
+    text-align: center;
+}
+
+.card-footer:last-child {
+    padding-top: 1vw !important;
+}
+
 .btn-black {
     background: black;
     color: white;
@@ -170,7 +179,7 @@ color: black !important;
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: linear-gradient(135deg, rgba(255,254,246,1) 0%, rgba(255,238,202,1) 100%);
 	z-index: -1;
 }
 
@@ -273,6 +282,10 @@ input[name='q']::placeholder {
     background: #ffe9d7;
 }
 
+.blog-img-top {
+    max-height: 240px;
+}
+
 .card-body {
     background: #ffe9d7;
 }
@@ -294,6 +307,20 @@ input[name='q']::placeholder {
     border: 0px;
 }
 
+.unfav-button {
+    display: block;
+    position: absolute;
+    bottom: 0rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+}
+
+.unfav-button i,
 .favourite-button i {
     font-size: 2rem;
 }
@@ -391,8 +418,9 @@ input[name='q']::placeholder {
 
 .post-image-container img {
     height: 45rem;
-    width: 35rem;
+    min-width: 34rem;
     margin-top: 10rem;
+    width: 90%;
 }
 
 .post-title-col {
@@ -437,10 +465,6 @@ input[name='q']::placeholder {
     padding: 0 2rem;
 }
 
-.item-col {
-    margin: 4rem 0;
-}
-
 .item-link-button {
     margin: 1.25rem 0;
     width: 15rem;
@@ -457,9 +481,20 @@ input[name='q']::placeholder {
 }
 
 /* Blog */
+.blog-homepage-container {
+    padding: calc(8vw + 4vh) 2vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
 .blog-homepage-container,
 .blog-homepage-details {
     background-color: #D1D1C7;
+}
+
+.blog-post {
+    max-width: 40vw;
 }
 
 .blog-image-container {
@@ -476,7 +511,7 @@ input[name='q']::placeholder {
 }
 
 .blog-item-details {
-    width: 25rem;
+    width: 90%;
     height: fit-content;
     position: absolute;
     bottom: -7.5rem;
@@ -499,14 +534,14 @@ input[name='q']::placeholder {
 @media (min-width: 768px) {
     .post-image-container img {
         height: 50rem;
-        width: 37rem;
+        width: 90%;
+        min-width: 37rem;
         margin-top: 10rem;
     }
 
     .post-title-container {
         height: 100%;
         width: 90%;
-        background: transparent;
         left: 5%;
         top: 0;
     }
@@ -620,5 +655,21 @@ input[name='q']::placeholder {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+
+    /* .blog-img-top {
+        max-width: 80vw;
+    } */
+
+    .navbar {
+        background-color: rgba(97, 132, 77, 1) !important;
+    }
+
+    .grad-back {
+        min-width: 160vw;
+    }
+
+    .post-buffer {
+        padding-top: 20vh;
     }
 }

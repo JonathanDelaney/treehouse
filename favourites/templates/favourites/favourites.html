@@ -27,7 +27,7 @@
         </form>
         <div class="row">
             {% for product in favourite_products %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
                 <div class="card h-100 border-0">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
@@ -55,7 +55,7 @@
                                 <form action="{% url 'remove_from_favourites' product.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    <button class="favourite-button" type="submit" data-toggle="tooltip" data-placement="top" title="Add To Favourites"><i class="fas fa-minus-circle flex-center" aria-hidden="true"></i></button>
+                                    <button class="unfav-button" type="submit" data-toggle="tooltip" data-placement="top" title="Add To Favourites"><i class="fas fa-minus-circle flex-center" aria-hidden="true"></i></button>
                                 </form>
                             </div>
                         </div>
