@@ -1,7 +1,6 @@
 <h1 align="center">treeHouse</h1>
 
-Live website :arrow_down:<br>
-<a href="https://treehouse-shop.herokuapp.com/">View live project here.</a>
+<a href="https://treehouse-shop.herokuapp.com/"><h2>View live project here</h2></a>
 
 ## About
 
@@ -9,6 +8,9 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 ## Screenshots
 
+### Home Page
+
+<div align="center"><img src="readme-images/home-page.png" alt="image of the homepage"></div>
 
 ## User Experience
 
@@ -50,9 +52,17 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 ### Mobile
 
+<img src="readme-images/phone-homepage.png" align="top" width="20%" margin="5px" /> <img src="readme-images/phone-products.png" align="top" width="20%" margin="5px" /> <img src="readme-images/phone-product-detail.png" align="top" width="20%" margin="5px" /> <img src="readme-images/phone-cart.png" align="top" width="20%" margin="5px" />
+
 ### Tablet
 
+<img src="readme-images/tablet-homepage.png" align="top" width="24%" margin="5px" /> <img src="readme-images/tablet-products.png" align="top" width="24%" margin="5px" /> <img src="readme-images/tablet-product-detail.png" align="top" width="24%" margin="5px" /> <img src="readme-images/tablet-cart.png" align="top" width="24%" margin="5px" />
+
 ### Desktop
+
+<img src="readme-images/desktop-homepage.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-products.png" align="top" width="47%" margin="5px" />
+<div heigh="5px"></div>
+<img src="readme-images/desktop-product-detail.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-cart.png" align="top" width="47%" margin="5px" />
 
 ## Database Models
 
@@ -88,6 +98,7 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 - Database Diagram
 
   - This databse diagram shows each object, its keys and relationships between them.
+  <img src="readme-images/database-model.png" align="top" width="95%" margin="5px" />
 
 ## Design
 
@@ -95,7 +106,7 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 - All the different shades of green and the gradient of the beige background with spots of brown should be perfect in representing the treehouse experience in simple colour.
 
-- The fonts chosen from google fonts for the header "treeHouse" are -blank- and Bonheur Royale. These are characteristic of the strong tree trunk and the elegant branches of leaves. This combination also could evoke the image of a treehouse.
+- The fonts chosen from google fonts for the header "treeHouse" are Lato and Caramel. These are characteristic of the strong tree trunk and the elegant branches of leaves. This combination also could evoke the image of a treehouse.
 
 - I used icons from font-awesome for relevant inputs, navigation and dropdown menu. For the "add to favourites" button I used a heart symbol, the obvious choice and emblematic of a like button.
 
