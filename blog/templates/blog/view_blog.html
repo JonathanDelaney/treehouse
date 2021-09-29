@@ -35,11 +35,11 @@ Blog
             <div class="card h-100 border-0">
                 {% if post.image %}
                 <a href="{% url 'view_post' post.id %}">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}">
+                    <img class="card-img-top blog-img" src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}">
                 </a>
                 {% else %}
                 <a href="{% url 'view_post' post.id %}"></a>">
-                <img class="card-img-top" src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}">
+                <img class="card-img-top blog-img" src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}">
                 </a>
                 {% endif %}
                 <div class="card-body"></div>

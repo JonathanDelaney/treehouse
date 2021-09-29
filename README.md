@@ -379,11 +379,16 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
   - AWS keys were set up in the Heroku config vars and settings.py was populated with code directing to the buckets.
 
 - Heroku Keys:
-      - DANGO_SECRET_KEY = your secret key.
-      - STRIPE_PUBLIC_KEY = your stripe public key.
-      - STRIPE_SECRET_KEY = your stripe secret key.
-      - STRIPE_WEBHOOK_SECRET = your stripe webhook secret.
-      - IN_DEVELOPMENT = True
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - DATABASE_URL
+  - EMAIL_HOST_PASS
+  - EMAIL_HOST_USER
+  - DJANGO_SECRET_KEY
+  - STRIPE_PUBLIC_KEY
+  - STRIPE_SECRET_KEY
+  - STRIPE_WEBHOOK_SECRET
+  - USE_AWS = True
 
 ### Forking
 If someone wants to add to the project they can fork off the main branch by following the instructons below.

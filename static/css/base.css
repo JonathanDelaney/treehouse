@@ -286,12 +286,17 @@ input[name='q']::placeholder {
     background: #ffe9d7;
 }
 
+.card-img-top.blog-img {
+    object-fit: cover !important;
+}
+
 .blog-img-top {
     max-height: 240px;
 }
 
 .card-body {
     background: #ffe9d7;
+    padding: 0rem;
 }
 
 .card-footer {
@@ -476,12 +481,12 @@ input[name='q']::placeholder {
 
 .item-link-light {
     color: #153243;
-    border: .1rem solid #153243;
 }
 
 .item-link-light:hover {
     background-color: #153243;
     color: #EDEDE9;
+    border-radius: 2px;
 }
 
 /* Blog */
@@ -568,8 +573,7 @@ input[name='q']::placeholder {
 
 @media (min-width: 1200px) {
     .post-image-container img {
-        height: 65rem;
-        width: 50rem;
+        object-fit: cover;
     }
 
     .post-title-container h1 {
