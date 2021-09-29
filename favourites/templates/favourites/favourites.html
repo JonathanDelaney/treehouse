@@ -20,11 +20,34 @@
                 <hr>
             </div>
         </div>
-        <form action="{% url 'empty_favourites' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            <button class="empty-button btn btn-lg rounded-0 text-uppercase" type="submit">Empty Favourites</button>
-        </form>
+        <!-- Delete Modal button -->
+        <button type="button" class="empty-button btn btn-lg rounded-0 text-uppercase" data-toggle="modal" data-target="#deleteModal">
+            Empty Favourites
+        </button>
+        <!-- Delete Product Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="Delete Modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="DeleteModal">Permanently Empty</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to empty favourites?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <form action="{% url 'empty_favourites' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            <button class="button btn-danger" type="submit" data-toggle="tooltip" data-placement="top" title="Add To Favourites">Empty</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             {% for product in favourite_products %}
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">

@@ -6,7 +6,7 @@
 
 This is an e-commerce website for a fictional eco-homeware business. The goal of the website is to allow customers to browse products, create an account, purchase products and store information about themselves, their purchase history and items they want to add to a wishlist. Also the site administrator can exercise CRUD functionality on products, and blogs for customers to read and comment on. It features STRIPE's payments processer and will allow a user to make a purchase using the following card details; card num: 4242 4242 4242 4242, any date and any cvv. Submition of those details will complete the order, please don't use your own card details.
 
-## Screenshots
+## Screenshot
 
 ### Home Page
 
@@ -141,7 +141,7 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
   - There is quantity selector so the user can choose how many of the product they wish to add.
   - The heart icon is also on this page so it can be added to favourites from here also.
 
-### Shopping Bag Page
+### Shopping Bag
 
 - When the user has finished shopping they can click the icon in the top left corner and be brought to the bag page.
 - This page allows the user to look at the products they have in their cart and edit them.
@@ -151,6 +151,33 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 - The checkout now button is just below, directing straight to a payments page.
 - When a product has been added to the cart it will trigger a dropdown displaying the contents of the bag, the toal price and a link to go directly to checkout.
 
-### The Checkout Page
+### The Checkout
 
-- If not logged in, the user will be required to give their 
+- For not logged in users, users who have not signed up or logged in users making their first purchase, the user will be required to give their details.
+- The customer will be prompted if they enter values in an incorrect format for the required field.
+- To the right of the field entries there is summary of their order with the total displayed.
+- After entering in the card details (card num: 4242 4242 4242 4242) and submitting them, they will be directed to an order confirmation page.
+- The user is thanked and given information about their order.
+
+### Favourites
+
+- The favourites page consists of all the products the user has favourited.
+- It is a wishlist that the user can keep indefinitely.
+- They need to have an account to be able to add things to a favourites page.
+- All items they have favourited in the past will appear here.
+- They can remove items from the wishlist by clicking on the dash icon beneath each product.
+- They can empty the list entirely by clicking the "empty favourites" button. This will open up a modal asking them to confirm that this action is correct.
+
+### The Profile Page
+
+- The user can change their details here; phone number and address.
+- They will see a order history list as well, with a link to each of those orders.
+- When the user clicks on the link they will be brought to the order confirmation page with the same information displayed on it. A message stating that this is an old order will also appear.
+
+### The Blog
+
+- This page shows all the blog posts created by the site administrator.
+- The administrator can add new blog posts from here or edit/delete existing posts.
+- The user can click on the image or the read more tab and open up the blog post.
+- Here they will see an enlarged cover photo for the blog and the blog post content below.
+- At the bottom of that page they will be able to add a comment or delete existing comment's they have written.

@@ -74,7 +74,7 @@
                 <form method="POST" action="{% url 'delete_comment' post_id=post.id %}">
                     {% csrf_token %}
                     <input type="hidden" name="comment_id" value="{{comment.id}}">
-                    <button class=" modal-button fs-3 flex-center delete-btn"
+                    <button class="text-danger fs-3 flex-center delete-btn border-0"
                         type="submit">Delete</button>
                 </form>
                 {% endif %}
