@@ -60,9 +60,9 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 ### Desktop
 
-<img src="readme-images/desktop-homepage.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-products.png" align="top" width="47%" margin="5px" />
+<img src="readme-images/desktop-homepage.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-products.png" align="top" width="43%" margin="5px" />
 <div heigh="5px"></div>
-<img src="readme-images/desktop-product-detail.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-cart.png" align="top" width="47%" margin="5px" />
+<img src="readme-images/desktop-product-detail.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-cart.png" align="top" width="43%" margin="5px" />
 
 ## Database Models
 
@@ -181,3 +181,81 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 - The user can click on the image or the read more tab and open up the blog post.
 - Here they will see an enlarged cover photo for the blog and the blog post content below.
 - At the bottom of that page they will be able to add a comment or delete existing comment's they have written.
+
+## Testing
+
+### User Experience
+
+- Customers
+  - Website experience
+    -  As a customer, I would like to see what the website is selling.
+        - The customer can see from the message on the landing page that the items are for home and personal cleaning.
+        - If they enter the blog they will see stories of individuals who try change their home products and habits.
+    - I would like to be able to navigate the website easily.
+      - There are all the important shopping related links visible in the navbar and dropdowns for profile related pages.
+      - The mobile navbar has all the main pages the user could access on the site so they are never more than a click away from where they might want to go.
+      - The style of the links are intuitive with their icons and the buttons stand out from the page.
+    - As a customer, I would like to know what the company's goal is.
+      - The message on the homepage is minimalist but sends a clear message about the site's goals.
+      - The blog gives the user more information about the mission of the site.
+  
+  - Product.
+    - As a customer, I would like to see all the products the company sells.
+      - From the homepage the user can click to immediately shop and browse through all the items.
+      - The products page displays all items in a well structured layout which makes it easy for them to see and search through all products.
+    - I would like to be able to search by category.
+      - The sort by input above the items will allow the user to show the category they want to explore, sorting by category.
+      - The category dropdown in the navbar lets them select the category they'd like to search through leaving out any items outside that category.
+      - The category an item is in, named below the product, is a link to display products only from that category.
+    - I would like to be able to search through the products.
+      - The search bar in the navbar allows users to search keywords in the title or description of a product and will display all which match that/those keywords.
+    - I would like to sort the items by price.
+      - The sort by selector at the top of the products page allows the user to organise the items by their price, category, or alphabetically, in ascending or descending order.
+
+  - Shopping.
+    - As a customer, I would like to see the product price and description.
+      - The price of each product is displayed below the items when displayed on the products page.
+      - The price and description can be read when the product detail page is opened by clicking on the product.
+      - Once added to the cart, the items will have their price listed beside them.
+    - I would like to be able to add products to my shopping bag.
+      - Once the user has clicked on a product they will be able to add it straight to the cart.
+      - On the product detail page their is a link to click to add that product to the bag.
+    - I would like to be notified when I complete interactions with the site.
+      - Their are toast messages which appear when any notable action has been taken on the site.
+      - They have colours which represent the tone of the message so that the user is made aware of the type of message it is without reading it; error - red, success - green, etc.
+    - I would like to be able to edit my shopping bag.
+      - On the shopping bag page there is a number adjuster beside each item to change the amount of a product you would like to purchase.
+      - There is a button to remove an item from the cart without delay and a button to update the number of a product being ordered.
+    - I would like to be able to checkout easily.
+      - The checkout button at the bottom brings the user straight to a page where they can put in their details and complete the order.
+      - A popup message appears whenever an item has been added to the bag so the user can choose to head straight to the bag and checkout anywhere on the site.
+      - The bag icon in the top right corner of the navbsr serves the same function.
+    - I would like to receive confirmation of my order.
+      - The customer will recieve an email confirming their order has been placed and will contain the details of that order.
+      - When the order is submitted the user is brought to a confirmation page thanking them and listing the details of the order.
+      - On their profile page they can confirm the orders in their history and open up the same confirmation page.
+
+  - Account.
+    - As a customer, I would like to save my details to an account.
+      - When completing an order a user can check a box which will save their details to their account so that they do not have to reenter them for the next order.
+      - The user will be prompted to set up an account if they are purchasing items without an account.
+    - I would like to see my previous order details.
+      - The profile page contains all the orders a user has made previously.
+      - The user can click on the links of orders on their profile page to see details of previous orders.
+      - Their email history will also help them maintain a record of purchases.
+
+- Website administrator.
+  - As a site administrator, I would like to be able to edit and add products easily.
+    - The site administrator is presented with a link to edit items on the products page. This page provides them with an easy to use form to fill out the details to edit the product.
+    - In the profile icon dropdown there is a "product management" link for adding new products. This also includes an easy to fill out form
+    - If they are a superuser they can access django's admin to editand add products from there.
+  - I would like to be able to delete products.
+    - The site administrator is presented with a link to delete items on the products page.
+    - A modal will appear when attempting to delete to avoid the accidental deletion of products.
+    - If they are a superuser they can delete products from the django admin.
+  - I would like to have access to an admin section.
+    - The product management presents the administrator with an admin section for adding products.
+    - The editing an item page provides the same.
+    - The django admin pages allow for complete adjusting of products, categories and accounts on the site.
+  - I would like my customers to be able to shop on the site easily.
+    - As outlined in the customer experience, a user has all they could want to navigate the site and purchase products with absolute ease.
