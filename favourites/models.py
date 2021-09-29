@@ -19,5 +19,4 @@ def create_or_update_the_UsersFavourites(sender, instance, created, **kwargs):
     ''' creates the user profile or updates it if there is one already '''
     if created:
         UsersFavourites.objects.create(user=instance)
-        # UsersFavourites.products = None
     instance.userprofile.save()

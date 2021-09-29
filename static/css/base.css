@@ -23,6 +23,8 @@ body {
     min-width: 100vw;
 }
 
+/* container padding */
+
 .container {
     padding-bottom: 6rem;
 }
@@ -34,6 +36,12 @@ body {
 .home-container {
     padding-top: 1rem;
 }
+
+.head-buffer {
+    margin-top: calc(8vw + 8vh);
+}
+
+/* forms */
 
 .form-control {
     background-color: rgba(97, 132, 77, 0) !important;
@@ -65,6 +73,8 @@ color: black !important;
     color: #343a40;
 }
 
+/* main logo */
+
 .logo-font {
     text-transform: uppercase;
 }
@@ -73,6 +83,8 @@ color: black !important;
     width: fit-content;
     margin-left: calc(9vw - 16px);
 }
+
+/* navbar */
 
 .navbar {
     padding: 0px !important;
@@ -87,6 +99,8 @@ color: black !important;
     background: #fdf7ea;
 }
 
+/* landing page buttons */
+
 .shop-now-button {
     background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 72%, rgba(154,112,24,1) 100%);
     color: white;
@@ -99,6 +113,15 @@ color: black !important;
     background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 72%, rgba(154,112,24,1) 100%) !important;
 }
 
+.blog-button {
+    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 32%, rgba(154,112,24,1) 100%);
+    color: white;
+    min-width: 260px;
+    border-radius: 3px !important;
+}
+
+/* admin buttons */
+
 .empty-button {
     background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(147,137,7,1) 72%, rgba(154,112,24,1) 100%) !important;
     margin-bottom: 2rem;
@@ -110,12 +133,14 @@ color: black !important;
     border: none !important;
 }
 
-.blog-button {
-    background: linear-gradient(135deg, rgba(97, 132, 77, 1) 0%, rgba(97, 132, 77, 1) 32%, rgba(154,112,24,1) 100%);
-    color: white;
-    min-width: 260px;
+.add-to {
+    background-color: rgba(100, 82, 59, 0.8);
+    width: fit-content;
+    height: min-content;
     border-radius: 3px !important;
 }
+
+/* product and blog cards */
 
 .card {
     border-radius: 3px !important;
@@ -126,6 +151,8 @@ color: black !important;
     padding-top: 1vw !important;
 }
 
+/* general buttons */
+
 .btn-black {
     background: black;
     color: white;
@@ -135,13 +162,6 @@ color: black !important;
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
-}
-
-.add-to {
-    background-color: rgba(100, 82, 59, 0.8);
-    width: fit-content;
-    height: min-content;
-    border-radius: 3px !important;
 }
 
 .btn-outline-black:hover,
@@ -173,9 +193,7 @@ color: black !important;
     background: #000 !important;
 }
 
-.head-buffer {
-    margin-top: calc(8vw + 8vh);
-}
+/* cover as background */
 
 .overlay {
 	height: 100%;
@@ -277,6 +295,8 @@ input[name='q']::placeholder {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* blog */
 
 .card-img-top {
     border-top-left-radius: calc(.25rem - 1px);
@@ -424,6 +444,8 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* more blog styling */
 
 .post-image-container img {
     height: 45rem;
