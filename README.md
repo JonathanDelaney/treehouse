@@ -60,9 +60,13 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 ### Desktop
 
-<img src="readme-images/desktop-homepage.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-products.png" align="top" width="43%" margin="5px" />
-<div heigh="5px"></div>
-<img src="readme-images/desktop-product-detail.png" align="top" width="47%" margin="5px" /> <img src="readme-images/desktop-cart.png" align="top" width="43%" margin="5px" />
+<img align="center" src="readme-images/desktop-homepage.png" align="top" width="80%" margin="5px" />
+-
+<img src="readme-images/desktop-products.png" align="top" width="80%" margin="5px" />
+-
+<img src="readme-images/desktop-product-detail.png" align="top" width="80%" margin="5px" />
+-
+<img src="readme-images/desktop-cart.png" align="top" width="80%" margin="5px" />
 
 ## Database Models
 
@@ -184,7 +188,7 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
 
 ## Testing
 
-### User Experience
+### Testing User Stories
 
 - Customers
   - Website experience
@@ -259,3 +263,157 @@ This is an e-commerce website for a fictional eco-homeware business. The goal of
     - The django admin pages allow for complete adjusting of products, categories and accounts on the site.
   - I would like my customers to be able to shop on the site easily.
     - As outlined in the customer experience, a user has all they could want to navigate the site and purchase products with absolute ease.
+
+### Django Unit Testing
+
+  - Django unit testing was used to test the functionality of the site automatically.
+  - Tests were written for all of the views in each app.
+  - To run the tests, the following command is run:
+    - python3 manage.py test
+  - All tests run with no errors or fails.
+  <img src="readme-images/test-result.png" align="top" width="90%" margin="5px" />
+
+### Bugs
+
+  - There were no significant bugs discovered during the development of the website or in the testing phase.
+  - Responsivity issues and style conflicts were rectified during the creation of the site but no notable errors or failures of the back-end.
+
+### Manual Testing
+
+#### Personal
+
+  - I created customer accounts, added items to the bag, deleted some, checked out items, added comments to blog posts, deleted them, edited user information, added items to my favourites, deleted them, and repeated these steps on different screen sizes.
+  - I created admin accounts to test editing, adding, and deleteing of products and blog posts, and repeated this on different screen sizes.
+  - All the forms were tested to see if they would accept incorrect formats as inputs.
+  - No issues were found at time of submition.
+
+#### Friends and Family
+
+  - I had friends and family of all different ages and abilities to test the website out and no issues were found.
+  - Some styling changes, like the addition of a heart icon for the add to favourites functionality, were made off the back of feedback received in this stage of testing.
+
+### Validators
+
+#### W3C was used to test the css and it passed.
+<img src="readme-images/w3c-test.png" align="top" width="90%" />
+-
+-
+
+#### I used JSHint to test my JavaScript and it passed.
+<img src="readme-images/jshint-test.png" align="top" width="90%" />
+
+## Technologies Used
+
+- The website was built using the Django framework
+
+### Languages Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Python
+
+### Django Extensions
+
+- Django Allauth
+- Django Countries
+- Django Crispy Forms
+
+### Other Technologies
+
+- Stripe 
+  - For payments
+- Heroku
+  - Deployment
+- Amazon AWS
+  - Static and image storage
+- Gunicorn
+  - For deplying to Heroku
+- Google Fonts
+  - Fonts
+- Font Awesome
+  - Icons
+- Bootstrap 5
+  - Styling and layout
+- Quick Database Diagrams
+  - For database model
+- AdobeXD
+  - For the mock-ups
+
+### Compatibility Testing
+- Browser Compatibility
+
+    | Screen size\Browser | Safari           | Opera            | Microsoft Edge   | Chrome           | Firefox          | Internet Explorer |
+    | --------------------|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:-----------------:|
+    | Mobile              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| Not Tested        |
+    | Desktop             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| Not Tested        |
+    | Tablet              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| Not Tested        |
+
+## Deployment
+
+### Heroku
+
+  Once the app was ready I deployed it to Heroku by following these steps.
+
+- **Create an app on the Heroku website.**
+    - Firstly I clicked on the new button.
+    - Then I clicked on the create a new app.
+    - I then gave my app a name and chose my current region.
+    - I then selected create app.
+
+- **Set up Postgres Database**
+  - Heroku
+    - In the app resources section I searched for Postgres
+    - I then chose to add to the project and, choosing the free plan.
+    - To use Postgres we need to install 2 dependencies.
+        - dj_database_url
+        - psycopg2
+    - Then load the data to the database via the command line, after writing the database settings in settings.py
+    - Then deploy to Heroku with the config vars referncing the postgres database.
+
+- #### Amazon AWS
+
+  - Amazon AWS was used to store both static files and media files.
+  - Firstly I created an AWS account and worked through the sign-up process. Once my account was set up I was able to set my project up on AWS.
+  - I created an S3 bucket, users, groups and defined the permissions of access to the buckets for the users, groups, and allow public read access.
+  - AWS keys were set up in the Heroku config vars and settings.py was populated with code directing to the buckets.
+
+- Heroku Keys:
+      - DANGO_SECRET_KEY = your secret key.
+      - STRIPE_PUBLIC_KEY = your stripe public key.
+      - STRIPE_SECRET_KEY = your stripe secret key.
+      - STRIPE_WEBHOOK_SECRET = your stripe webhook secret.
+      - IN_DEVELOPMENT = True
+
+### Forking
+If someone wants to add to the project they can fork off the main branch by following the instructons below.
+1. Go to the GitHub website and log in.
+2. Locate the [Repository](https://github.com/JonathanDelaney/treehouse) used for this project.
+3. On the right-hand side of the Repository name, you'll see the 'Fork' button next to the 'Star' and 'Watch' buttons.
+4. This will create a copy in your personal repository.
+5. Once you've finished making changes you can locate the 'New Pull Request' button just above the file listing in the original repository.
+
+### Cloning 
+For someone looking to clone the repository they would follow the steps outlined below.
+1. Go to the GitHub website and log in.
+2. Locate the [Repository](https://github.com/JonathanDelaney/treehouse) used for this project.
+3. Under the Repository name locate 'Clone or Download' button in green.
+4. To clone the repository using HTTPS click the link under "Clone with HTTPS".
+5. Open your Terminal and go to a directory where you want the cloned directory to be copied in.
+6. Type `Git Clone` and paste the URL you copied from the GitHub.
+7. To create your local clone press `Enter`.
+
+## Credits
+
+All publicly available content used in this website is for educational fair use.
+
+I sourced images from [unsplash.com](https://unsplash.com/) None of the images used require license to publish.
+
+I adapted the models for my favourites model and blog model from [Brian Whelan's Adobe](https://github.com/BrianWhelanDublin/milestone-project-4)
+
+The blog posts were selected from [Going Zero Waste](https://www.goingzerowaste.com/)
+
+I looked at a lot of youtube videos with mixed input from too many to name.<br><br>
+Of course I have to mention the course material was referenced and an honorable mention should be made to all the contributors to the CodeInstitute's course material.<br>
+Also to the good people in the slack group chats who helped out with general feedback.
+Thank you.
